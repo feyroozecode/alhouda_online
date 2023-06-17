@@ -1,0 +1,37 @@
+<!-- courses/home.html -->
+
+{% extends '../base.html' %}
+
+{% block content %}
+  <h1>Courses</h1>
+
+  <div class="course-list">
+    {% for course in courses %}
+      <div class="course-card">
+        <h3>{{ course.title }}</h3>
+        <p>{{ course.description }}</p>
+        {% if course.audio_files.all %}
+          <p>Audio: 
+            {% for audio_file in course.audio_files.all %}
+              <a href="{{ audio_file.url }}">Download Audio {{ forloop.counter }}</a>
+            {% endfor %}
+          </p>
+        {% endif %}
+        {% if course.video_files.all %}
+          <p>Video: 
+            {% for video_file in course.video_files.all %}
+              <a href="{{ video_file.url }}">Download Video {{ forloop.counter }}</a>
+            {% endfor %}
+          </p>
+        {% endif %}
+        {% if course.pdf_files.all %}
+          <p>PDF: 
+            {% for pdf_file in course.pdf_files.all %}
+              <a href="{{ pdf_file.url }}">Download PDF {{ forloop.counter }}</a>
+            {% endfor %}
+          </p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
