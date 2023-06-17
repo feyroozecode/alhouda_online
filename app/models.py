@@ -1,4 +1,4 @@
-from .models.scholar import Scholar
-from .models.course import Course
-from .models.medias import Audio, Video, PDF, Media
-from .models.publication import Publication
+from .my_models.scholar import Scholar
+from .my_models.course import Course
+from .my_models.medias import Audio, Video, PDF, Media
+from .my_models.publication import Publication
