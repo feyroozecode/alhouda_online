@@ -2,8 +2,32 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Your Website</title>
-  <style>
+  <title>Alhouda Online</title>
+</head>
+<body>
+  <div class="header">
+    <h1>Your Website</h1>
+  </div>
+  
+  <div class="nav">
+    <a {% if request.path == '/' %}class="active" {% endif %}href="/">Home</a>
+    <a {% if request.path == '/scholars/' %}class="active" {% endif %}href="/scholars/">Scholars</a>
+    <a {% if request.path == '/about/' %}class="active" {% endif %}href="/about/">About</a>
+    <a {% if request.path == '/contact/' %}class="active" {% endif %}href="/contact/">Contact</a>
+  </div>
+  
+  <div class="content">
+    {% block content %}
+    {% endblock %}
+  </div>
+  
+  <div class="footer">
+    <p>&copy; 2023 Your Alfajer Islamic Open Sources Project. 
+        All rights reserved.</p>
+  </div>
+</body>
+</html>
+<style>
     /* Global Styles */
     body {
       margin: 0;
@@ -55,27 +79,3 @@
       text-align: center;
     }
   </style>
-</head>
-<body>
-  <div class="header">
-    <h1>Your Website</h1>
-  </div>
-  
-  <div class="nav">
-    <a {% if request.path == '/' %}class="active" {% endif %}href="/">Home</a>
-    <a {% if request.path == '/scholars/' %}class="active" {% endif %}href="/scholars/">Scholars</a>
-    <a {% if request.path == '/about/' %}class="active" {% endif %}href="/about/">About</a>
-    <a {% if request.path == '/contact/' %}class="active" {% endif %}href="/contact/">Contact</a>
-  </div>
-  
-  <div class="content">
-    {% block content %}
-    {% endblock %}
-  </div>
-  
-  <div class="footer">
-    <p>&copy; 2023 Your Alfajer Islamic Open Sources Project. 
-        All rights reserved.</p>
-  </div>
-</body>
-</html>

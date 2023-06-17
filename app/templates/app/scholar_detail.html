@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ scholar.name }}</h1>
+  <p>{{ scholar.description }}</p>
+  <p>Location: {{ scholar.location }}</p>
+
+  <h2>Courses:</h2>
+  <ul>
+    {% for course in scholar.courses.all %}
+      <li>{{ course.name }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
