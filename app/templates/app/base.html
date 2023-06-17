@@ -10,10 +10,10 @@
   </div>
   
   <div class="nav">
-    <a {% if request.path == '/app/' %}class="active" {% endif %}href="/">Home</a>
-    <a {% if request.path == '/app/scholars/' %}class="active" {% endif %}href="/scholars/">Scholars</a>
-    <a {% if request.path == '/app/about/' %}class="active" {% endif %}href="/about/">About</a>
-    <a {% if request.path == '/app/contact/' %}class="active" {% endif %}href="/contact/">Contact</a>
+    <a {% if request.path == '/' %}class="active" {% endif %}href="/app">Home</a>
+    <a {% if request.path == '/scholars/' %}class="active" {% endif %}href="/app/scholars/">Scholars</a>
+    <a {% if request.path == '/about/' %}class="active" {% endif %}href="/app/about/">About</a>
+    <a {% if request.path == '/contact/' %}class="active" {% endif %}href="/app/contact/">Contact</a>
   </div>
   
   <div class="content">

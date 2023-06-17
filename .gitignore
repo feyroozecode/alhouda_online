@@ -2,4 +2,10 @@
 **/migrations/*.py
 **/migrations/*.pyc
 **/migrations/__pycache__/
+
+# db 
 db.sqlite3
+
+# 
+**app/__pycache__/*.py
+**app/__pycache__/.pyc

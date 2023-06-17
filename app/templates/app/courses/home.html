@@ -3,7 +3,7 @@
 {% extends '../base.html' %}
 
 {% block content %}
-  <h1>Courses</h1>
+  <h1 class="page-title">Courses</h1>
 
   <div class="course-list">
     {% for course in courses %}
@@ -35,3 +35,47 @@
     {% endfor %}
   </div>
 {% endblock %}
+
+<style>
+    /* CSS styles */
+.page-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.course-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.course-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #ffff;
+  max-width: 400px;
+  width: 40%;
+}
+
+.course-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.course-card p {
+  margin-bottom: 10px;
+}
+
+.course-card a {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.course-card a:hover {
+  text-decoration: underline;
+}
+
+</style>
