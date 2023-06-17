@@ -1,64 +1,83 @@
+<!-- scholars/home.html -->
+
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Scholars List</h1>
+  <h1 class="page-title">Scholars</h1>
 
-  <div class="scholars-container">
+  <div class="scholar-list">
     {% for scholar in scholars %}
       <div class="scholar-card">
-        <div class="scholar-image">
-          <img src="{{ scholar.image.url }}" alt="{{ scholar.name }}">
-        </div>
-        <div class="scholar-details">
-          <h3>{{ scholar.name }}</h3>
-          <p>{{ scholar.description }}</p>
-          <p>Location: {{ scholar.location }}</p>
-          <p>Courses:</p>
-          <ul>
+        <h3 class="scholar-name">{{ scholar.name }}</h3>
+        <p class="scholar-description">{{ scholar.description }}</p>
+        <p class="scholar-location">{{ scholar.location }}</p>
+        {% if scholar.image %}
+          <img class="scholar-image" src="{{ scholar.image.url }}" alt="{{ scholar.name }} Image">
+        {% endif %}
+        {% if scholar.courses.all %}
+          <h4 class="course-header">Courses:</h4>
+          <ul class="course-list">
             {% for course in scholar.courses.all %}
               <li>{{ course.title }}</li>
             {% endfor %}
           </ul>
-        </div>
+        {% endif %}
       </div>
     {% endfor %}
   </div>
 {% endblock %}
 
-<style>
-    /* style.css */
 
-.scholars-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+<style>
+  /* CSS styles */
+.page-title {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.scholar-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
 }
 
 .scholar-card {
-  width: 300px;
-  background-color: #f2f2f2;
+  border: 1px solid #ccc;
   padding: 20px;
-  border-radius: 5px;
+  background-color: #f9f9f9;
 }
 
-.scholar-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
+.scholar-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.scholar-details h3 {
-  color: #333;
-  margin-top: 10px;
+.scholar-description {
+  margin-bottom: 10px;
 }
 
-.scholar-details p {
+.scholar-location {
+  font-style: italic;
   color: #666;
+  margin-bottom: 10px;
 }
 
-ul {
-  margin: 0;
-  padding-left: 20px;
+.scholar-image {
+  max-width: 200px;
+  max-height: 200px;
+  margin-bottom: 10px;
 }
 
+.course-header {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.course-list {
+  list-style-type: disc;
+  margin-left: 20px;
+}
 </style>

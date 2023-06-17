@@ -6,14 +6,14 @@
 </head>
 <body>
   <div class="header">
-    <h1>Your Website</h1>
+    <h3>Alhouda Online</h3>
   </div>
   
   <div class="nav">
-    <a {% if request.path == '/' %}class="active" {% endif %}href="/">Home</a>
-    <a {% if request.path == '/scholars/' %}class="active" {% endif %}href="/scholars/">Scholars</a>
-    <a {% if request.path == '/about/' %}class="active" {% endif %}href="/about/">About</a>
-    <a {% if request.path == '/contact/' %}class="active" {% endif %}href="/contact/">Contact</a>
+    <a {% if request.path == '/app/' %}class="active" {% endif %}href="/">Home</a>
+    <a {% if request.path == '/app/scholars/' %}class="active" {% endif %}href="/scholars/">Scholars</a>
+    <a {% if request.path == '/app/about/' %}class="active" {% endif %}href="/about/">About</a>
+    <a {% if request.path == '/app/contact/' %}class="active" {% endif %}href="/contact/">Contact</a>
   </div>
   
   <div class="content">
@@ -38,7 +38,7 @@
     /* Header Styles */
     .header {
       background-color: #00aa00;
-      padding: 20px;
+      padding: 10px;
       color: #fff;
     }
     
