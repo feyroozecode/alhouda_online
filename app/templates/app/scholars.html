@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h2>Oulemas <h2>
+        {% for scholar in scholars %}
+            <div class="scholar">
+                <h3> {{ scholar.name }} </h3> 
+                <p> {{ scholar.description }} </p>
+                <p> {{ scholar.location }} </p>
+            </div>
+        
+        {% endfor %}
+
+{% endblock %}

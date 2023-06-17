@@ -1,0 +1,18 @@
+
+<div>
+{% for publication in publications %}
+  <h3>{{ publication.title }}</h3>
+  <p>{{ publication.description }}</p>
+  <p>Date of Publication: {{ publication.date_of_pub }}</p>
+  {% if publication.media.audio_file %}
+    <p>Audio: <a href="{{ publication.media.audio_file.url }}">Download Audio</a></p>
+  {% endif %}
+  {% if publication.media.video_file %}
+    <p>Video: <a href="{{ publication.media.video_file.url }}">Download Video</a></p>
+  {% endif %}
+  {% if publication.media.pdf_file %}
+    <p>PDF: <a href="{{ publication.media.pdf_file.url }}">Download PDF</a></p>
+  {% endif %}
+{% endfor %}
+
+</div>

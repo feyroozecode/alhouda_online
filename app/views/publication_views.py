@@ -5,4 +5,4 @@ class PublicationViews:
     def publications(request):
         publications = Publication.objects.all().order_by('-date_of_pub')
         
-        return render(request, 'publications.html', {'publications': publications} )
+        return render(request, 'app/publications.html', {'publications': publications} )
