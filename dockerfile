@@ -1,11 +1,14 @@
 
-FROM python:3.9.13
+FROM python:3.9
 
 # set workdir
 WORKDIR /app
 
 # copy code from working DIR
 COPY . . 
+
+# install requirement
+RUN pip install --no-cache-dir -r requirements.txt
 
 # expose app to 8000 port
 EXPOSE 8000
