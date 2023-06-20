@@ -27,11 +27,18 @@ class Course(models.Model):
     def __str__(self):
         return self.title
 
+
 # Media
 class Media(models.Model):
-    audio_file = models.FileField(upload_to='publications/media/audios/', blank=True, null=True)
-    video_file = models.FileField(upload_to='publications/media/videos/', blank=True, null=True)
-    pdf_file = models.FileField(upload_to='publications/media/pdfs/', blank=True, null=True)
+    audio_file = models.FileField(
+        upload_to='publications/media/audios/', blank=True, null=True
+    )
+    video_file = models.FileField(
+        upload_to='publications/media/videos/', blank=True, null=True
+    )
+    pdf_file = models.FileField(
+        upload_to='publications/media/pdfs/', blank=True, null=True
+    )
 
     def __str__(self):
         return f"Media: {self.id}"

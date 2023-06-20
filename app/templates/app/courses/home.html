@@ -10,6 +10,7 @@
       <div class="course-card">
         <h3>{{ course.title }}</h3>
         <p>{{ course.description }}</p>
+        <pre><a href="#"> {{ course.scholar.name }} </a></pre>
         {% if course.audio_files.all %}
           <p>Audio: 
             {% for audio_file in course.audio_files.all %}
@@ -34,7 +35,7 @@
       </div>
     {% endfor %}
   </div>
-{% endblock %}
+
 <style>
     /* CSS styles */
 .page-title {
@@ -49,14 +50,15 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+  background-color: rgb(243, 243, 243) !important;
 }
 
-.course-card {
-  border: 3px solid #ccc;
+.course-list .course-card {
   padding: 20px;
-  background-color: #ffffff;
+  background-color: white !important;
   max-width: 400px;
   width: 100%;
+  margin: 10px;
 }
 
 .course-card h3 {
@@ -78,5 +80,6 @@
   text-decoration: underline;
 }
 
-
 </style>
+
+{% endblock %}
