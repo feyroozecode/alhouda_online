@@ -1,6 +1,9 @@
+from uuid import uuid4
+import uuid
 from django.db import models
 
 class Scholar(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=255)
     description = models.TextField()
     location = models.CharField(max_length=255)
@@ -11,6 +14,7 @@ class Scholar(models.Model):
         return self.name
     
 class Course(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     scholar = models.ForeignKey(
         Scholar, on_delete=models.CASCADE, related_name='courses_of_scholar',
        

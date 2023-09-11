@@ -1,17 +1,14 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Scholar, Course, Publication
 
-def scholarList(request):
+def scholar_list(request):
     scholars = Scholar.objects.all()
     return render(request, 'app/scholars/home.html', {'scholars':  scholars})
 
-def scholarDetails(request):
-    scholar = get_object_or_404(Scholar.objects.all(),)
-    return render(request, 'app/scholar/scholar_details.html', {'scholar': scholar})
-
 def scholar_detail(request, scholar_id):
-    scholar = get_object_or_404(Scholar, id=scholar_id)
-    return render(request, 'app/scholar_detail.html', {'scholar': scholar})
+    scholar = get_object_or_404(Scholar.objects.get(scholar_id), id=scholar_id)
+    context = {'scholar': scholar}
+    return render(request, 'app/scholars/details.html', context)
 
 def publications(request):
     publications = Publication.objects.all().order_by('-date_of_pub')

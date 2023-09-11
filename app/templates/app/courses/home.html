@@ -10,7 +10,7 @@
       <div class="course-card">
         <h3>{{ course.title }}</h3>
         <p>{{ course.description }}</p>
-        <pre><a href="#"> {{ course.scholar.name }} </a></pre>
+        <pre><a href="{% url 'scholars' %}"> {{ course.scholar.name }} </a></pre>
         {% if course.audio_files.all %}
           <p>Audio: 
             {% for audio_file in course.audio_files.all %}
